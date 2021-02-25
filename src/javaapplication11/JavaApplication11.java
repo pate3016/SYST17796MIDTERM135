@@ -29,6 +29,15 @@ public class JavaApplication11 {
         this.season = season;
     }
    
+    public boolean isSeason(){
+        String myStr = null;
+               if(Seasons.valueOf(myStr).equals(Seasons.values())){
+                        return true;
+               }else{
+                   return false;
+               }
+        }
+   
     public void seasonDescription()
     {
        switch (season){
@@ -52,9 +61,11 @@ public class JavaApplication11 {
         String myStr= "SUMMER";
         JavaApplication11 test1= new JavaApplication11(Seasons.valueOf(myStr));
         test1.seasonDescription();
-        //test1.isSeason();
-        int ord = Seasons.valueOf(myStr).ordinal();
-        System.out.println(Seasons.valueOf(myStr).ordinal());
+        Scanner input = new Scanner(System.in);
+        String myStr = input.nextLine();
+        JavaApplication11 test1= new JavaApplication11(Seasons.valueOf(myStr));
+        test1.seasonDescription();
+        test1.isSeason();
         //a for loop that iterated thru the Seasons Enum using values() method
         for (Seasons mySeason: Seasons.values())
         {
